@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MERIDIAN · Dashboard — Pulpit</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600&family=Instrument+Sans:wght@400;500;600;700&family=Spline+Sans+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/base.css" />
+  <link rel="stylesheet" href="assets/css/dashboard.css" />
+</head>
+<body class="dash">
+
+  <!-- ══ sidebar ══ -->
+  <aside class="side">
+    <a class="brand" href="index.html">MERIDIAN<span>.</span></a>
+    <nav class="side__nav">
+      <a href="#" class="active"><i>01</i>Pulpit</a>
+      <a href="#"><i>02</i>Przychody</a>
+      <a href="#"><i>03</i>Klienci</a>
+      <a href="#"><i>04</i>Prognozy</a>
+      <a href="#"><i>05</i>Automatyzacje</a>
+      <a href="#"><i>06</i>Raporty</a>
+    </nav>
+    <div class="side__goal">
+      <p>Cel · $1 000 000 ARR</p>
+      <div class="side__bar"><span class="side__fill" id="sideFill"></span></div>
+      <strong>$842,3K / $1M</strong>
+    </div>
+  </aside>
+
+  <!-- ══ main ══ -->
+  <div class="main">
+    <header class="topbar">
+      <span class="brand topbar__brand">MERIDIAN<span>.</span></span>
+      <h1>Pulpit</h1>
+      <span class="topbar__date">wtorek · 24 września 2026</span>
+      <label class="search">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.5" y2="16.5"/></svg>
+        <input type="text" placeholder="Szukaj klienta, faktury…" aria-label="Szukaj" />
+      </label>
+      <button class="icon-btn" aria-label="Powiadomienia">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8a6 6 0 1 0-12 0c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.7 21a2 2 0 0 1-3.4 0"/></svg>
+      </button>
+      <span class="avatar" title="Jan Kowalski · CEO">JK</span>
+    </header>
+
+    <div class="content">
+      <!-- KPI -->
+      <section class="kpis" aria-label="Kluczowe wskaźniki">
+        <article class="kpi">
+          <span class="kpi__label">MRR</span>
+          <div class="kpi__row"><strong class="kpi__num" id="kpiMrr">$0</strong><span class="delta delta--up">▲ 12.4%</span></div>
+          <svg class="spark" data-spark="mrr" aria-hidden="true"></svg>
+        </article>
+        <article class="kpi">
+          <span class="kpi__label">ARR run-rate</span>
+          <div class="kpi__row"><strong class="kpi__num" id="kpiArr">$0</strong><span class="delta delta--gold">▲ cel $1M</span></div>
+          <svg class="spark" data-spark="arr" aria-hidden="true"></svg>
+        </article>
+        <article class="kpi">
+          <span class="kpi__label">Aktywni klienci</span>
+          <div class="kpi__row"><strong class="kpi__num" id="kpiClients">0</strong><span class="delta delta--up">▲ 9</span></div>
+          <svg class="spark" data-spark="clients" aria-hidden="true"></svg>
+        </article>
+        <article class="kpi">
+          <span class="kpi__label">Churn miesięczny</span>
+          <div class="kpi__row"><strong class="kpi__num" id="kpiChurn">0%</strong><span class="delta delta--up">▼ 0.3 pp</span></div>
+          <svg class="spark" data-spark="churn" aria-hidden="true"></svg>
+        </article>
+      </section>
+
+      <!-- siatka główna -->
+      <section class="grid-main">
+
+        <article class="card span-8">
+          <div class="card__head">
+            <div>
+              <h3 id="chartTitle">MRR miesięczny</h3>
+              <p class="card__sub" id="chartUnit">$K / mies. · przerywana linia = cel $1M ARR</p>
+            </div>
+            <div class="periods" role="group" aria-label="Zakres czasu">
+              <button data-period="7D">7 dni</button>
+              <button data-period="30D">30 dni</button>
+              <button data-period="12M" class="active">12 mies.</button>
+            </div>
+          </div>
+          <div class="chart-wrap">
+            <div id="chartSvg"></div>
+            <div class="chart-tip" id="chartTip"></div>
+          </div>
+        </article>
+
+        <article class="card span-4 goal-card">
+          <div class="card__head"><h3>Ścieżka do miliona</h3></div>
+          <strong class="goal__pct" id="goalPct">0%</strong>
+          <div class="goal__bar"><span class="goal__fill" id="goalFill"></span></div>
+          <div class="goal__scale"><span>$0</span><span>$500K</span><span>$1M</span></div>
+          <ul class="milestones">
+            <li class="ms-done"><span class="ms-mark">✓</span>Q1 · $300K ARR<b>osiągnięte</b></li>
+            <li class="ms-done"><span class="ms-mark">✓</span>Q2 · $600K ARR<b>osiągnięte</b></li>
+            <li class="ms-now"><span class="ms-mark">●</span>Q3 · $900K ARR<b>w toku</b></li>
+            <li class="ms-next"><span class="ms-mark">○</span>Q4 · $1M ARR<b>prognoza: XI.26</b></li>
+          </ul>
+          <p class="goal__note">Prognoza AI: cel osiągnięty w listopadzie 2026 (±3 tyg.)</p>
+        </article>
+
+        <article class="card span-5">
+          <div class="card__head"><h3>Przychód wg kanału</h3></div>
+          <div class="donut-wrap">
+            <svg id="donutSvg" viewBox="0 0 120 120" role="img" aria-label="Struktura przychodu: Enterprise 46%, Mid-market 31%, Self-serve 23%"></svg>
+            <ul class="legend">
+              <li><i style="background:#0C2B1F"></i>Enterprise<b>$38.7K</b></li>
+              <li><i style="background:#D8A32B"></i>Mid-market<b>$26.1K</b></li>
+              <li><i style="background:#9A917C"></i>Self-serve<b>$19.4K</b></li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="card span-7">
+          <div class="card__head"><h3>Najwięksi klienci</h3><p class="card__sub">wg MRR · wrzesień 2026</p></div>
+          <div class="table-wrap">
+            <table class="table">
+              <thead><tr><th>Klient</th><th>Plan</th><th>MRR</th><th>Trend</th><th>Status</th></tr></thead>
+              <tbody>
+                <tr><td class="t-name">Nordvik AB</td><td class="t-plan">Enterprise</td><td class="t-mrr">$9,800</td><td><svg class="t-spark" data-spark="c1"></svg></td><td><span class="chip chip--ok">Aktywny</span></td></tr>
+                <tr><td class="t-name">Helix Labs</td><td class="t-plan">Enterprise</td><td class="t-mrr">$7,250</td><td><svg class="t-spark" data-spark="c2"></svg></td><td><span class="chip chip--ok">Aktywny</span></td></tr>
+                <tr><td class="t-name">Kantor &amp; Skała</td><td class="t-plan">Mid-market</td><td class="t-mrr">$3,400</td><td><svg class="t-spark" data-spark="c3" data-good="false"></svg></td><td><span class="chip chip--warn">Opóźnienie</span></td></tr>
+                <tr><td class="t-name">Bloom Studio</td><td class="t-plan">Mid-market</td><td class="t-mrr">$2,900</td><td><svg class="t-spark" data-spark="c4"></svg></td><td><span class="chip chip--ok">Aktywny</span></td></tr>
+                <tr><td class="t-name">Paperplane Sp. z o.o.</td><td class="t-plan">Self-serve</td><td class="t-mrr">$890</td><td><svg class="t-spark" data-spark="c5"></svg></td><td><span class="chip chip--new">Nowy</span></td></tr>
+              </tbody>
+            </table>
+          </div>
+        </article>
+
+      </section>
+
+    </div>
+  </div>
+  <script src="assets/js/dashboard.js"></script>
+</body>
+</html>

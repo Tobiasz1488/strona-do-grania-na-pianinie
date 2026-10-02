@@ -1,0 +1,90 @@
+/* ============================================================
+   MERIDIAN · design system — wspólna baza
+   Kierunek: edytorski "old money" — papier, atrament, sosna, złoto
+   ============================================================ */
+:root{
+  --paper:#F4F0E6;
+  --paper-2:#ECE6D8;
+  --ink:#1B1913;
+  --ink-soft:#6C6553;
+  --line:rgba(27,25,19,.16);
+  --pine:#0C2B1F;
+  --pine-2:#14402E;
+  --cream:#EFEAD9;
+  --gold:#D8A32B;
+  --gold-bright:#F2C14E;
+  --up:#1E6B45;
+  --down:#B3401F;
+
+  --font-display:"Fraunces",Georgia,"Times New Roman",serif;
+  --font-body:"Instrument Sans","Segoe UI",system-ui,sans-serif;
+  --font-mono:"Spline Sans Mono","Cascadia Code",Consolas,monospace;
+
+  --wrap:1240px;
+}
+
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:var(--font-body);
+  background:var(--paper);
+  color:var(--ink);
+  line-height:1.55;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+
+/* ziarno papieru */
+body::after{
+  content:"";position:fixed;inset:0;z-index:2000;pointer-events:none;opacity:.05;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)' opacity='.55'/%3E%3C/svg%3E");
+}
+
+img,svg{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+ul{list-style:none}
+button{font:inherit;background:none;border:0;cursor:pointer;color:inherit}
+::selection{background:var(--gold);color:var(--ink)}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+
+.wrap{width:min(var(--wrap),92vw);margin-inline:auto}
+
+h1,h2,h3,.display{font-family:var(--font-display);font-weight:500;line-height:1.06;letter-spacing:-.01em}
+h1 em,h2 em{
+  font-style:italic;font-weight:400;
+  background-image:linear-gradient(transparent 70%,rgba(216,163,43,.42) 70%);
+}
+
+.mono{font-family:var(--font-mono)}
+.eyebrow{
+  display:flex;align-items:center;gap:.65rem;
+  font-family:var(--font-mono);font-size:.7rem;font-weight:500;
+  letter-spacing:.24em;text-transform:uppercase;color:var(--ink-soft);
+}
+.eyebrow::before{content:"";width:34px;height:1px;background:var(--gold)}
+
+/* przyciski */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:.5rem;
+  font-family:var(--font-mono);font-size:.76rem;font-weight:600;
+  letter-spacing:.14em;text-transform:uppercase;
+  padding:.95rem 1.6rem;border:1px solid var(--ink);border-radius:2px;white-space:nowrap;
+  transition:transform .18s ease,background .18s ease,color .18s ease,border-color .18s ease,box-shadow .18s ease;
+}
+.btn--solid{background:var(--ink);color:var(--cream)}
+.btn--solid:hover{background:var(--pine);transform:translateY(-2px);box-shadow:0 12px 26px -14px rgba(27,25,19,.55)}
+.btn--ghost{background:transparent;color:var(--ink)}
+.btn--ghost:hover{background:var(--ink);color:var(--cream);transform:translateY(-2px)}
+.btn--gold{background:var(--gold);border-color:var(--gold);color:var(--ink)}
+.btn--gold:hover{background:var(--gold-bright);border-color:var(--gold-bright);transform:translateY(-2px);box-shadow:0 12px 26px -14px rgba(216,163,43,.5)}
+.btn--lg{padding:1.15rem 2.1rem;font-size:.82rem}
+
+/* reveal przy scrollu */
+[data-reveal]{opacity:0;transform:translateY(26px);transition:opacity .8s cubic-bezier(.2,.7,.2,1),transform .8s cubic-bezier(.2,.7,.2,1);transition-delay:var(--d,0s)}
+[data-reveal].in{opacity:1;transform:none}
+
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  [data-reveal]{opacity:1;transform:none;transition:none}
+  *,*::before,*::after{animation-duration:.001s!important;transition-duration:.001s!important}
+}

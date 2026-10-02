@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MERIDIAN — Platforma operacyjna dla biznesu wartego milion</title>
+  <meta name="description" content="Meridian łączy przychody, prognozy i automatyzacje w jednym pulpicie. Zbuduj firmę wartą $1 000 000 i trzymaj ją na wodzy." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,300;1,9..144,400&family=Instrument+Sans:wght@400;500;600;700&family=Spline+Sans+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/base.css" />
+  <link rel="stylesheet" href="assets/css/landing.css" />
+</head>
+<body>
+
+  <!-- ══ ticker z metrykami ══ -->
+  <div class="ticker" aria-hidden="true">
+    <div class="ticker__track">
+      <span>MRR $84,2K ▲ 12%</span><i>◆</i><span>ARR RUN-RATE $1.01M</span><i>◆</i><span>NRR 138%</span><i>◆</i><span>CHURN 1.9%</span><i>◆</i><span>LTV / CAC 6.2×</span><i>◆</i><span>PAYBACK 7 MIES.</span><i>◆</i><span>CSAT 4.9/5</span><i>◆</i><span>312 AKTYWNYCH KLIENTÓW</span><i>◆</i>
+      <span>MRR $84,2K ▲ 12%</span><i>◆</i><span>ARR RUN-RATE $1.01M</span><i>◆</i><span>NRR 138%</span><i>◆</i><span>CHURN 1.9%</span><i>◆</i><span>LTV / CAC 6.2×</span><i>◆</i><span>PAYBACK 7 MIES.</span><i>◆</i><span>CSAT 4.9/5</span><i>◆</i><span>312 AKTYWNYCH KLIENTÓW</span><i>◆</i>
+    </div>
+  </div>
+
+  <!-- ══ nawigacja ══ -->
+  <header class="nav">
+    <div class="nav__inner">
+      <a class="brand" href="#top">MERIDIAN<span>.</span></a>
+      <nav class="nav__links" id="navLinks">
+        <a href="#platforma">Platforma</a>
+        <a href="#liczby">Liczby</a>
+        <a href="#opinie">Opinie</a>
+      </nav>
+      <div class="nav__actions">
+        <a class="btn btn--ghost" href="#">Umów demo</a>
+        <a class="btn btn--solid" href="dashboard.html">Otwórz dashboard →</a>
+      </div>
+      <button class="nav__burger" id="burger" aria-label="Menu"><span></span><span></span></button>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- ══ hero + gauge do miliona ══ -->
+    <section class="hero">
+      <div class="hero__inner">
+        <div class="hero__copy" data-reveal>
+          <p class="eyebrow">Platforma operacyjna · edycja 7 cyfr</p>
+          <h1>Zbuduj biznes wart<br /><em>milion dolarów.</em><br />Zarządzaj nim z jednego pulpitu.</h1>
+          <p class="hero__sub">Meridian łączy przychody, prognozy i automatyzacje w jednym miejscu — żebyś mógł skupić się na tym, co naprawdę skaluje firmę.</p>
+          <div class="hero__cta">
+            <a class="btn btn--solid btn--lg" href="dashboard.html">Wejdź do dashboardu</a>
+            <a class="btn btn--ghost btn--lg" href="#platforma">Zobacz platformę ↓</a>
+          </div>
+          <ul class="hero__meta">
+            <li><strong>14 dni</strong>&nbsp;za darmo</li>
+            <li><strong>0 kart</strong>&nbsp;kredytowych</li>
+            <li><strong>SOC 2</strong>&nbsp;Type II</li>
+          </ul>
+        </div>
+
+        <div class="hero__gauge" data-reveal style="--d:.15s">
+          <svg viewBox="0 0 360 360" role="img" aria-label="Postęp do celu: 84% miliona dolarów ARR">
+            <circle class="gauge-ring" cx="180" cy="180" r="172" />
+            <circle class="gauge-ticks" cx="180" cy="180" r="156" />
+            <circle class="gauge-track" cx="180" cy="180" r="140" />
+            <circle class="gauge-progress" id="gaugeArc" cx="180" cy="180" r="140" transform="rotate(-90 180 180)" />
+          </svg>
+          <div class="hero__gauge-center">
+            <span class="gauge-label">Cel · roczny przychód</span>
+            <strong id="gaugeNumber">$0</strong>
+            <span class="gauge-sub"><b id="gaugePct">0%</b> celu · bieżący ARR $842,3K</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ loga klientów ══ -->
+    <section class="logos" data-reveal>
+      <p>Powiązują swoje liczby z Meridianem</p>
+      <ul>
+        <li>NORDVIK</li><li>Helix Labs</li><li>Kantor &amp; Skała</li><li>bloom.</li><li>OSTRA</li><li>Paperplane</li>
+      </ul>
+    </section>
+
+    <!-- ══ liczby ══ -->
+    <section class="stats" id="liczby">
+      <div class="wrap">
+        <p class="eyebrow" data-reveal>Liczby, nie obietnice</p>
+        <h2 data-reveal style="--d:.05s">Wyniki, które widać<br /><em>w zyskach i stratach.</em></h2>
+      </div>
+      <div class="wrap stats__grid">
+        <div class="stat" data-reveal>
+          <span class="stat__num"><span data-count="1.01" data-dec="2" data-prefix="$" data-suffix="M">$0</span></span>
+          <span class="stat__label">ARR run-rate</span>
+          <p class="stat__note">Przychód roczny przeliczony z bieżącego MRR. Cel $1M — w zasięgu.</p>
+        </div>
+        <div class="stat" data-reveal style="--d:.08s">
+          <span class="stat__num"><span data-count="312">0</span></span>
+          <span class="stat__label">Aktywnych klientów</span>
+          <p class="stat__note">Od self-serve po enterprise. Każdy widzi te same liczby, co ty.</p>
+        </div>
+        <div class="stat" data-reveal style="--d:.16s">
+          <span class="stat__num"><span data-count="138" data-suffix="%">0</span></span>
+          <span class="stat__label">NRR · retencja netto</span>
+          <p class="stat__note">Klienci wydają rok do roku 38% więcej. Wzrost bez nowych leadów.</p>
+        </div>
+        <div class="stat" data-reveal style="--d:.24s">
+          <span class="stat__num"><span data-count="4.9" data-dec="1" data-suffix="/5">0</span></span>
+          <span class="stat__label">Ocena zespołów</span>
+          <p class="stat__note">Średnia z 214 ankiet CSAT w ostatnich dwóch kwartałach.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ platforma / bento ══ -->
+    <section class="features" id="platforma">
+      <div class="wrap">
+        <p class="eyebrow" data-reveal>Platforma</p>
+        <h2 data-reveal style="--d:.05s">Wszystko, co trzyma firmę<br />na kursie do miliona.</h2>
+        <p class="features__lead" data-reveal style="--d:.1s">Jeden pulpit zamiast siedmiu arkuszy. Meridian liczy, prognozuje i alarmuje — zanim liczby staną się problemem.</p>
+
+        <div class="bento">
+          <article class="bento__card bento--revenue" data-reveal>
+            <h3>Pulpit przychodów</h3>
+            <p>MRR, ARR i cash flow w czasie rzeczywistym. Linia celu $1M zawsze na widoku — razem z prognozą, kiedy ją przekroczysz.</p>
+            <svg class="bento__chart" viewBox="0 0 420 170" preserveAspectRatio="none" aria-hidden="true">
+              <line x1="0" y1="30" x2="420" y2="30" class="bc-goal" />
+              <path class="bc-area" d="M0,150 C40,146 70,140 105,130 C140,120 175,112 210,98 C245,84 280,72 315,58 C350,44 390,30 420,22 L420,170 L0,170 Z" />
+              <path class="bc-line" d="M0,150 C40,146 70,140 105,130 C140,120 175,112 210,98 C245,84 280,72 315,58 C350,44 390,30 420,22" />
+            </svg>
+          </article>
+
+          <article class="bento__card bento--forecast" data-reveal style="--d:.06s">
+            <h3>Prognozy AI</h3>
+            <p>Model przewiduje cash flow na 90 dni do przodu i pokazuje, które decyzje zbliżają cię do celu — a które oddalają.</p>
+            <div class="mini-gauge">
+              <svg viewBox="0 0 120 120" aria-hidden="true">
+                <circle cx="60" cy="60" r="50" class="mg-track" />
+                <circle cx="60" cy="60" r="50" class="mg-fill" pathLength="100" transform="rotate(-90 60 60)" />
+              </svg>
+              <span><strong>94%</strong><small>dokładność prognoz</small></span>
+            </div>
+          </article>
+
+          <article class="bento__card bento--auto" data-reveal style="--d:.1s">
+            <h3>Automatyzacje, które pracują za Ciebie</h3>
+            <ul class="auto-list">
+              <li><span>Faktury i płatności</span><em>Aktywne</em></li>
+              <li><span>Onboarding klientów</span><em>Aktywne</em></li>
+              <li><span>Pilnowanie opóźnień</span><em>Aktywne</em></li>
+              <li><span>Raporty dla inwestorów</span><em>Cotygodniowo</em></li>
+            </ul>
+          </article>
+
+          <article class="bento__card bento--reports" data-reveal style="--d:.14s">
+            <h3>Raporty w jeden klik</h3>
+            <p>Miesięczny raport inwestora, KPI dla zarządu i cash flow dla banku — gotowe w PDF i Excel, zanim zdążysz o nie poprosić.</p>
+          </article>
+
+          <article class="bento__card bento--integr" data-reveal style="--d:.18s">
+            <h3>Integracje</h3>
+            <div class="chips">
+              <span>Stripe</span><span>Xero</span><span>Salesforce</span><span>Slack</span><span>Google Sheets</span><span>HubSpot</span>
+            </div>
+          </article>
+
+          <article class="bento__card bento--team" data-reveal style="--d:.22s">
+            <h3>Zespół i role</h3>
+            <p>CEO widzi wszystko, CFO tylko finanse. Pełna kontrola dostępu z dziennikiem zmian — audyt bez stresu.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ opinia ══ -->
+    <section class="quote" id="opinie">
+      <figure class="wrap" data-reveal>
+        <blockquote>Przeskoczyliśmy milion ARR w czternaście miesięcy. Meridian pokazywał nam drogę miesiąc przed każdym skokiem — i pierwszy raz, kiedy liczby się pogorszyły, wiedzieliśmy o tym wcześniej niż bank.</blockquote>
+        <figcaption><strong>Marta Zielińska</strong> · CEO, Helix Labs</figcaption>
+      </figure>
+    </section>
+
+    <!-- ══ CTA ══ -->
+    <section class="cta">
+      <div class="wrap" data-reveal>
+        <p class="eyebrow">Start w 5 minut</p>
+        <h2>Gotowy na swój<br /><em>milion?</em></h2>
+        <a class="btn btn--gold btn--lg" href="dashboard.html">Załóż konto — za darmo →</a>
+        <p class="cta__note">14 dni pełnej wersji · bez karty kredytowej · anulujesz kiedy chcesz</p>
+      </div>
+    </section>
+  </main>
+
+  <!-- ══ stopka ══ -->
+  <footer>
+    <div class="wrap footer__grid">
+      <div class="footer__brand">
+        <a class="brand" href="#top">MERIDIAN<span>.</span></a>
+        <p>Platforma operacyjna dla firm celujących w siedem cyfr. Zbudowana z obsesją na punkcie liczb.</p>
+      </div>
+      <nav><h4>Produkt</h4><ul><li><a href="#platforma">Pulpit przychodów</a></li><li><a href="#platforma">Prognozy AI</a></li><li><a href="#platforma">Automatyzacje</a></li><li><a href="dashboard.html">Dashboard</a></li></ul></nav>
+      <nav><h4>Firma</h4><ul><li><a href="#">O nas</a></li><li><a href="#">Kariera</a></li><li><a href="#">Kontakt</a></li></ul></nav>
+      <nav><h4>Zasoby</h4><ul><li><a href="#">Dokumentacja</a></li><li><a href="#">Status API</a></li><li><a href="#">Bezpieczeństwo</a></li></ul></nav>
+    </div>
+    <div class="wrap footer__bottom">
+      <span>© 2026 Meridian Sp. z o.o. · Warszawa</span>
+      <span>NIP 527-000-00-00 · KRS 0000000000</span>
+    </div>
+  </footer>
+
+
+  <script src="assets/js/landing.js"></script>
+</body>
+</html>
